@@ -8,7 +8,6 @@
 [![OpenAPI](https://img.shields.io/badge/OpenAPI-3.1-green?logo=openapi-initiative)](https://swagger.io/specification/)
 
 ![Imagify Banner](https://placehold.co/1200x400/4F46E5/FFFFFF?text=Imagify%20API%20%F0%9F%93%B8)  
-*(Replace with your actual banner image)*
 
 ---
 
@@ -43,16 +42,9 @@
 
 ### Installation
 ```bash
-git clone https://github.com/your-username/imagify.git
+git clone https://github.com/appujet/imagify.git
 cd imagify
 deno task start
-```
-
-### Environment Variables
-Create `.env`:
-```ini
-PORT=8000
-API_KEY=your_secret_key  # Optional for auth
 ```
 
 ---
@@ -126,9 +118,4 @@ MIT © [Your Name](https://github.com/your-username)
 5. **Mermaid diagram** for architecture (renders on GitHub).
 6. **Clean contribution guidelines**.
 
-### How to Customize:
-- Replace `your-username` with your GitHub handle.
-- Add real screenshots (e.g., Swagger UI, example outputs).
-- Update the banner image (use tools like [Canva](https://canva.com) or [Placeholder.com](https://placeholder.com)).
-
-Would you like me to add a deployment guide (e.g., Docker, Deno Deploy) or a performance benchmark section? 🚀
+---
