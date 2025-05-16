@@ -11,6 +11,11 @@ import { compositeRoute } from './composite';
 import { edgeRoute } from './edge';
 import { metadataRoute } from './metadata';
 import { qrcodeRoute } from './qrcode';
+import { bgRemoveRoute } from './remove-bg';
+import { memeRoute } from './meme';
+import { asciiRoute } from './ascii';
+import { collageRoute } from './collage';
+
 
 
 export const routes = new OpenAPIHono();
@@ -27,3 +32,7 @@ routes.openapi(compositeRoute.route, compositeRoute.handler);
 routes.openapi(edgeRoute.route, edgeRoute.handler);
 routes.openapi(metadataRoute.route, metadataRoute.handler);
 routes.openapi(qrcodeRoute.route, qrcodeRoute.handler);
+routes.openapi(bgRemoveRoute.route, bgRemoveRoute.handler);
+routes.openapi(memeRoute.route, memeRoute.handler);
+routes.openapi(asciiRoute.route, asciiRoute.handler);
+routes.openapi(collageRoute.route, collageRoute.handler);
