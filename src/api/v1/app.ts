@@ -1,10 +1,14 @@
 import { OpenAPIHono } from "@hono/zod-openapi";
 import { swaggerUI } from "@hono/swagger-ui";
-import { routes } from "./routes/index.ts";
+import { routes } from "./routes/index";
+import { logger } from "hono/logger";
+
 
 export const app = new OpenAPIHono();
 
+app.use("*", logger());
 // API versioning
+
 const v1 = new OpenAPIHono();
 v1.route("/", routes);
 

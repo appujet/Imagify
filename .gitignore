@@ -5,8 +5,8 @@ node_modules
 #yarn
 yarn-error.log
 
-#deno
-deno.lock
+#bun
+bun.lock
 
 #npm
 package-lock.json

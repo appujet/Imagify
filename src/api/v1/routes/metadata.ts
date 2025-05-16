@@ -1,27 +1,26 @@
-// deno-lint-ignore-file no-explicit-any
-import { createRoute } from '@hono/zod-openapi';
-import { z } from 'zod';
-import sharp from 'sharp';
+import { createRoute } from "@hono/zod-openapi";
+import { z } from "zod";
+import sharp from "sharp";
 import { Buffer } from "node:buffer";
 
 export const metadataRoute = {
   route: createRoute({
-    method: 'post',
-    path: '/metadata',
-    tags: ['Image Analysis'],
-    summary: 'Extract image metadata',
-    description: 'Upload an image to extract its metadata',
+    method: "post",
+    path: "/metadata",
+    tags: ["Image Analysis"],
+    summary: "Extract image metadata",
+    description: "Upload an image to extract its metadata",
     request: {
       body: {
         content: {
-          'multipart/form-data': {
+          "multipart/form-data": {
             schema: z.object({
               image: z
                 .any()
-                .describe('Image file to analyze')
+                .describe("Image file to analyze")
                 .openapi({
-                  type: 'string',
-                  format: 'binary',
+                  type: "string",
+                  format: "binary",
                 }),
             }),
           },
@@ -30,9 +29,9 @@ export const metadataRoute = {
     },
     responses: {
       200: {
-        description: 'Image metadata',
+        description: "Image metadata",
         content: {
-          'application/json': {
+          "application/json": {
             schema: z.object({
               format: z.string(),
               width: z.number(),
@@ -55,16 +54,16 @@ export const metadataRoute = {
         },
       },
       400: {
-        description: 'Bad request - no image provided',
+        description: "Bad request - no image provided",
       },
     },
   }),
-  handler: async (c: any) => {
+  handler: async (c: Context) => {
     const formData = await c.req.formData();
-    const file = formData.get('image');
-    
+    const file = formData.get("image");
+
     if (!(file instanceof File)) {
-      return c.text('Image is required', 400);
+      return c.text("Image is required", 400);
     }
 
     try {
@@ -89,8 +88,8 @@ export const metadataRoute = {
         xmp: metadata.xmp,
       });
     } catch (error) {
-      console.error('Metadata extraction error:', error);
-      return c.text('Error extracting metadata', 500);
+      console.error("Metadata extraction error:", error);
+      return c.text("Error extracting metadata", 500);
     }
-  }
+  },
 };

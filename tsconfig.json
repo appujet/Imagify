@@ -1,12 +1,8 @@
 {
-    "compilerOptions": {
-        "moduleResolution": "nodenext",
-        "experimentalDecorators": true,
-        "target": "ES5",
-        "lib": [
-            "DOM",
-            "DOM.Iterable",
-            "ESNext"
-        ]
-    },
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "jsxImportSource": "hono/jsx"
+  }
 }

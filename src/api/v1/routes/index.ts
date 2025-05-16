@@ -1,16 +1,16 @@
 import { OpenAPIHono } from '@hono/zod-openapi';
-import { colorRoute } from './color.ts';
-import { compressRoute } from './compress.ts';
-import { invertRoute } from './invert.ts';
-import { blurRoute } from './blur.ts';
-import { grayscaleRoute } from './grayscale.ts';
-import { resizeRoute } from './resize.ts';
-import { cropRoute } from './crop.ts';
-import { rotateRoute } from './rotate.ts';
-import { compositeRoute } from './composite.ts';
-import { edgeRoute } from './edge.ts';
-import { metadataRoute } from './metadata.ts';
-import { qrcodeRoute } from './qrcode.ts';
+import { colorRoute } from './color';
+import { compressRoute } from './compress';
+import { invertRoute } from './invert';
+import { blurRoute } from './blur';
+import { grayscaleRoute } from './grayscale';
+import { resizeRoute } from './resize';
+import { cropRoute } from './crop';
+import { rotateRoute } from './rotate';
+import { compositeRoute } from './composite';
+import { edgeRoute } from './edge';
+import { metadataRoute } from './metadata';
+import { qrcodeRoute } from './qrcode';
 
 
 export const routes = new OpenAPIHono();
